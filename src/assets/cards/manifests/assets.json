@@ -1,0 +1,413 @@
+{
+  "version": "1.0.0",
+  "generationDate": "2026-04-27",
+  "totalAssets": 40,
+  "assets": [
+    {
+      "id": "animal_lion",
+      "category": "animal",
+      "subject": "lion",
+      "imageKey": "animals_lion",
+      "fileName": "animals_lion.png",
+      "filePath": "src/assets/cards/animals/animals_lion.png",
+      "altText": "Lion",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_tiger",
+      "category": "animal",
+      "subject": "tiger",
+      "imageKey": "animals_tiger",
+      "fileName": "animals_tiger.png",
+      "filePath": "src/assets/cards/animals/animals_tiger.png",
+      "altText": "Tiger",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_elephant",
+      "category": "animal",
+      "subject": "elephant",
+      "imageKey": "animals_elephant",
+      "fileName": "animals_elephant.png",
+      "filePath": "src/assets/cards/animals/animals_elephant.png",
+      "altText": "Elephant",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_giraffe",
+      "category": "animal",
+      "subject": "giraffe",
+      "imageKey": "animals_giraffe",
+      "fileName": "animals_giraffe.png",
+      "filePath": "src/assets/cards/animals/animals_giraffe.png",
+      "altText": "Giraffe",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_zebra",
+      "category": "animal",
+      "subject": "zebra",
+      "imageKey": "animals_zebra",
+      "fileName": "animals_zebra.png",
+      "filePath": "src/assets/cards/animals/animals_zebra.png",
+      "altText": "Zebra",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_panda",
+      "category": "animal",
+      "subject": "panda",
+      "imageKey": "animals_panda",
+      "fileName": "animals_panda.png",
+      "filePath": "src/assets/cards/animals/animals_panda.png",
+      "altText": "Panda",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_koala",
+      "category": "animal",
+      "subject": "koala",
+      "imageKey": "animals_koala",
+      "fileName": "animals_koala.png",
+      "filePath": "src/assets/cards/animals/animals_koala.png",
+      "altText": "Koala",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_monkey",
+      "category": "animal",
+      "subject": "monkey",
+      "imageKey": "animals_monkey",
+      "fileName": "animals_monkey.png",
+      "filePath": "src/assets/cards/animals/animals_monkey.png",
+      "altText": "Monkey",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_fox",
+      "category": "animal",
+      "subject": "fox",
+      "imageKey": "animals_fox",
+      "fileName": "animals_fox.png",
+      "filePath": "src/assets/cards/animals/animals_fox.png",
+      "altText": "Fox",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_rabbit",
+      "category": "animal",
+      "subject": "rabbit",
+      "imageKey": "animals_rabbit",
+      "fileName": "animals_rabbit.png",
+      "filePath": "src/assets/cards/animals/animals_rabbit.png",
+      "altText": "Rabbit",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_bear",
+      "category": "animal",
+      "subject": "bear",
+      "imageKey": "animals_bear",
+      "fileName": "animals_bear.png",
+      "filePath": "src/assets/cards/animals/animals_bear.png",
+      "altText": "Bear",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_deer",
+      "category": "animal",
+      "subject": "deer",
+      "imageKey": "animals_deer",
+      "fileName": "animals_deer.png",
+      "filePath": "src/assets/cards/animals/animals_deer.png",
+      "altText": "Deer",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_wolf",
+      "category": "animal",
+      "subject": "wolf",
+      "imageKey": "animals_wolf",
+      "fileName": "animals_wolf.png",
+      "filePath": "src/assets/cards/animals/animals_wolf.png",
+      "altText": "Wolf",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_penguin",
+      "category": "animal",
+      "subject": "penguin",
+      "imageKey": "animals_penguin",
+      "fileName": "animals_penguin.png",
+      "filePath": "src/assets/cards/animals/animals_penguin.png",
+      "altText": "Penguin",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_dolphin",
+      "category": "animal",
+      "subject": "dolphin",
+      "imageKey": "animals_dolphin",
+      "fileName": "animals_dolphin.png",
+      "filePath": "src/assets/cards/animals/animals_dolphin.png",
+      "altText": "Dolphin",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_whale",
+      "category": "animal",
+      "subject": "whale",
+      "imageKey": "animals_whale",
+      "fileName": "animals_whale.png",
+      "filePath": "src/assets/cards/animals/animals_whale.png",
+      "altText": "Whale",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_turtle",
+      "category": "animal",
+      "subject": "turtle",
+      "imageKey": "animals_turtle",
+      "fileName": "animals_turtle.png",
+      "filePath": "src/assets/cards/animals/animals_turtle.png",
+      "altText": "Turtle",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_crocodile",
+      "category": "animal",
+      "subject": "crocodile",
+      "imageKey": "animals_crocodile",
+      "fileName": "animals_crocodile.png",
+      "filePath": "src/assets/cards/animals/animals_crocodile.png",
+      "altText": "Crocodile",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_owl",
+      "category": "animal",
+      "subject": "owl",
+      "imageKey": "animals_owl",
+      "fileName": "animals_owl.png",
+      "filePath": "src/assets/cards/animals/animals_owl.png",
+      "altText": "Owl",
+      "status": "pending_generation"
+    },
+    {
+      "id": "animal_parrot",
+      "category": "animal",
+      "subject": "parrot",
+      "imageKey": "animals_parrot",
+      "fileName": "animals_parrot.png",
+      "filePath": "src/assets/cards/animals/animals_parrot.png",
+      "altText": "Parrot",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_car",
+      "category": "vehicle",
+      "subject": "car",
+      "imageKey": "vehicles_car",
+      "fileName": "vehicles_car.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_car.png",
+      "altText": "Car",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_bus",
+      "category": "vehicle",
+      "subject": "bus",
+      "imageKey": "vehicles_bus",
+      "fileName": "vehicles_bus.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_bus.png",
+      "altText": "Bus",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_truck",
+      "category": "vehicle",
+      "subject": "truck",
+      "imageKey": "vehicles_truck",
+      "fileName": "vehicles_truck.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_truck.png",
+      "altText": "Truck",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_motorcycle",
+      "category": "vehicle",
+      "subject": "motorcycle",
+      "imageKey": "vehicles_motorcycle",
+      "fileName": "vehicles_motorcycle.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_motorcycle.png",
+      "altText": "Motorcycle",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_bicycle",
+      "category": "vehicle",
+      "subject": "bicycle",
+      "imageKey": "vehicles_bicycle",
+      "fileName": "vehicles_bicycle.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_bicycle.png",
+      "altText": "Bicycle",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_train",
+      "category": "vehicle",
+      "subject": "train",
+      "imageKey": "vehicles_train",
+      "fileName": "vehicles_train.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_train.png",
+      "altText": "Train",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_tram",
+      "category": "vehicle",
+      "subject": "tram",
+      "imageKey": "vehicles_tram",
+      "fileName": "vehicles_tram.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_tram.png",
+      "altText": "Tram",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_helicopter",
+      "category": "vehicle",
+      "subject": "helicopter",
+      "imageKey": "vehicles_helicopter",
+      "fileName": "vehicles_helicopter.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_helicopter.png",
+      "altText": "Helicopter",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_airplane",
+      "category": "vehicle",
+      "subject": "airplane",
+      "imageKey": "vehicles_airplane",
+      "fileName": "vehicles_airplane.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_airplane.png",
+      "altText": "Airplane",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_rocket",
+      "category": "vehicle",
+      "subject": "rocket",
+      "imageKey": "vehicles_rocket",
+      "fileName": "vehicles_rocket.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_rocket.png",
+      "altText": "Rocket",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_boat",
+      "category": "vehicle",
+      "subject": "boat",
+      "imageKey": "vehicles_boat",
+      "fileName": "vehicles_boat.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_boat.png",
+      "altText": "Boat",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_ship",
+      "category": "vehicle",
+      "subject": "ship",
+      "imageKey": "vehicles_ship",
+      "fileName": "vehicles_ship.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_ship.png",
+      "altText": "Ship",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_submarine",
+      "category": "vehicle",
+      "subject": "submarine",
+      "imageKey": "vehicles_submarine",
+      "fileName": "vehicles_submarine.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_submarine.png",
+      "altText": "Submarine",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_ambulance",
+      "category": "vehicle",
+      "subject": "ambulance",
+      "imageKey": "vehicles_ambulance",
+      "fileName": "vehicles_ambulance.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_ambulance.png",
+      "altText": "Ambulance",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_firetruck",
+      "category": "vehicle",
+      "subject": "fire truck",
+      "imageKey": "vehicles_firetruck",
+      "fileName": "vehicles_firetruck.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_firetruck.png",
+      "altText": "Fire Truck",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_policecar",
+      "category": "vehicle",
+      "subject": "police car",
+      "imageKey": "vehicles_policecar",
+      "fileName": "vehicles_policecar.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_policecar.png",
+      "altText": "Police Car",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_tractor",
+      "category": "vehicle",
+      "subject": "tractor",
+      "imageKey": "vehicles_tractor",
+      "fileName": "vehicles_tractor.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_tractor.png",
+      "altText": "Tractor",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_bulldozer",
+      "category": "vehicle",
+      "subject": "bulldozer",
+      "imageKey": "vehicles_bulldozer",
+      "fileName": "vehicles_bulldozer.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_bulldozer.png",
+      "altText": "Bulldozer",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_scooter",
+      "category": "vehicle",
+      "subject": "scooter",
+      "imageKey": "vehicles_scooter",
+      "fileName": "vehicles_scooter.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_scooter.png",
+      "altText": "Scooter",
+      "status": "pending_generation"
+    },
+    {
+      "id": "vehicle_hotairballoon",
+      "category": "vehicle",
+      "subject": "hot air balloon",
+      "imageKey": "vehicles_hotairballoon",
+      "fileName": "vehicles_hotairballoon.png",
+      "filePath": "src/assets/cards/vehicles/vehicles_hotairballoon.png",
+      "altText": "Hot Air Balloon",
+      "status": "pending_generation"
+    }
+  ],
+  "notes": [
+    "All 40 assets pending generation using prompt-pack.md templates",
+    "Images should be generated at 1024x1024 and optimized to 512x512",
+    "Each asset must score 10/10 on acceptance checklist before approval",
+    "Update status field to 'accepted' once asset passes all checks"
+  ]
+}
