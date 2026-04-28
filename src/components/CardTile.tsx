@@ -72,7 +72,7 @@ export const CardTile: React.FC<CardTileProps> = ({
   const screenWidth = Dimensions.get("window").width;
   // Increased padding and spacing for larger cards
   const cardSize = (screenWidth - 30 - (gridSize - 1) * 8) / gridSize;
-  
+
   // Animation value for flip (0 = face down, 1 = face up)
   const flipAnimation = useRef(new Animated.Value(0)).current;
   const [imageError, setImageError] = useState(false);
@@ -160,13 +160,19 @@ export const CardTile: React.FC<CardTileProps> = ({
             {hasImage ? (
               <Image
                 source={imageSource}
-                style={[styles.cardImage, { 
-                  width: cardSize * 0.85, 
-                  height: cardSize * 0.85 
-                }]}
+                style={[
+                  styles.cardImage,
+                  {
+                    width: cardSize * 0.85,
+                    height: cardSize * 0.85,
+                  },
+                ]}
                 resizeMode="contain"
                 onError={(error) => {
-                  console.error(`❌ Image load error for ${card.imageKey}:`, error.nativeEvent);
+                  console.error(
+                    `❌ Image load error for ${card.imageKey}:`,
+                    error.nativeEvent,
+                  );
                   setImageError(true);
                 }}
               />
@@ -187,7 +193,7 @@ export const CardTile: React.FC<CardTileProps> = ({
 
 const styles = StyleSheet.create({
   container: {
-    padding: 2,
+    padding: 4,
   },
   cardContainer: {
     flex: 1,
@@ -195,11 +201,16 @@ const styles = StyleSheet.create({
   },
   card: {
     flex: 1,
-    borderRadius: 12,
+    borderRadius: 20,
     justifyContent: "center",
     alignItems: "center",
-    borderWidth: 2,
+    borderWidth: 4,
     backfaceVisibility: "hidden",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    elevation: 5,
   },
   cardFace: {
     position: "absolute",
@@ -209,17 +220,17 @@ const styles = StyleSheet.create({
     bottom: 0,
   },
   faceDown: {
-    backgroundColor: "#4A90E2",
-    borderColor: "#357ABD",
+    backgroundColor: "#7C4DFF",
+    borderColor: "#5E35B1",
   },
   flipped: {
-    backgroundColor: "#F8F8F8",
-    borderColor: "#E0E0E0",
+    backgroundColor: "#FFFFFF",
+    borderColor: "#FFD54F",
   },
   matched: {
     backgroundColor: "#C8E6C9",
-    borderColor: "#81C784",
-    opacity: 0.9,
+    borderColor: "#4CAF50",
+    opacity: 0.8,
   },
   cardBack: {
     flex: 1,
@@ -227,8 +238,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   cardBackText: {
-    fontSize: 32,
-    fontWeight: "bold",
+    fontSize: 40,
+    fontWeight: "900",
     color: "#FFFFFF",
   },
   cardFront: {
@@ -242,11 +253,12 @@ const styles = StyleSheet.create({
   },
   placeholderText: {
     fontSize: 8,
-    color: "#666",
+    color: "#7C4DFF",
     textAlign: "center",
     marginBottom: 4,
+    fontWeight: "800",
   },
   emojiPlaceholder: {
-    fontSize: 32,
+    fontSize: 40,
   },
 });

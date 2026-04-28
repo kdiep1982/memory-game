@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Modal,
   View,
@@ -8,6 +8,7 @@ import {
   Dimensions,
 } from "react-native";
 import { GameStatus } from "../game/types";
+import { LevelSelectModal } from "./LevelSelectModal";
 
 interface ResultModalProps {
   visible: boolean;
@@ -15,6 +16,7 @@ interface ResultModalProps {
   level: number;
   score: number;
   highScore: number;
+  maxLevel: number;
   onNextLevel: () => void;
   onRestart: () => void;
   onLevelSelect: (level: number) => void;
@@ -26,77 +28,99 @@ export const ResultModal: React.FC<ResultModalProps> = ({
   level,
   score,
   highScore,
+  maxLevel,
   onNextLevel,
   onRestart,
   onLevelSelect,
 }) => {
+  const [showLevelSelect, setShowLevelSelect] = useState(false);
   const isLevelComplete = status === GameStatus.LevelComplete;
   const isGameOver = status === GameStatus.GameOver;
+
+  // Reset level select state when modal is closed
+  useEffect(() => {
+    if (!visible) {
+      setShowLevelSelect(false);
+    }
+  }, [visible]);
 
   if (!visible || (!isLevelComplete && !isGameOver)) {
     return null;
   }
 
+  // Hide ResultModal when LevelSelectModal is shown
+  const resultModalVisible = visible && !showLevelSelect;
+
   return (
-    <Modal
-      visible={visible}
-      transparent
-      animationType="fade"
-      onRequestClose={onRestart}
-    >
-      <View style={styles.overlay}>
-        <View style={styles.modal}>
-          <Text style={styles.title}>
-            {isLevelComplete ? "Level Complete!" : "Game Over"}
-          </Text>
+    <>
+      <Modal
+        visible={resultModalVisible}
+        transparent
+        animationType="fade"
+        onRequestClose={onRestart}
+      >
+        <View style={styles.overlay}>
+          <View style={styles.modal}>
+            <Text style={styles.title}>
+              {isLevelComplete ? "Level Complete!" : "Game Over"}
+            </Text>
 
-          <View style={styles.statsContainer}>
-            <View style={styles.statRow}>
-              <Text style={styles.statLabel}>Level:</Text>
-              <Text style={styles.statValue}>{level}</Text>
+            <View style={styles.statsContainer}>
+              <View style={styles.statRow}>
+                <Text style={styles.statLabel}>Level:</Text>
+                <Text style={styles.statValue}>{level}</Text>
+              </View>
+              <View style={styles.statRow}>
+                <Text style={styles.statLabel}>Score:</Text>
+                <Text style={styles.statValue}>{score}</Text>
+              </View>
+              <View style={styles.statRow}>
+                <Text style={styles.statLabel}>High Score:</Text>
+                <Text style={styles.statValue}>{highScore}</Text>
+              </View>
+              {score === highScore && score > 0 && (
+                <Text style={styles.newHighScore}>New High Score!</Text>
+              )}
             </View>
-            <View style={styles.statRow}>
-              <Text style={styles.statLabel}>Score:</Text>
-              <Text style={styles.statValue}>{score}</Text>
-            </View>
-            <View style={styles.statRow}>
-              <Text style={styles.statLabel}>High Score:</Text>
-              <Text style={styles.statValue}>{highScore}</Text>
-            </View>
-            {score === highScore && score > 0 && (
-              <Text style={styles.newHighScore}>New High Score!</Text>
-            )}
-          </View>
 
-          <View style={styles.buttonContainer}>
-            {isLevelComplete && (
+            <View style={styles.buttonContainer}>
+              {isLevelComplete && (
+                <TouchableOpacity
+                  style={[styles.button, styles.primaryButton]}
+                  onPress={onNextLevel}
+                >
+                  <Text style={styles.primaryButtonText}>Next Level</Text>
+                </TouchableOpacity>
+              )}
+
               <TouchableOpacity
-                style={[styles.button, styles.primaryButton]}
-                onPress={onNextLevel}
+                style={[styles.button, styles.secondaryButton]}
+                onPress={onRestart}
               >
-                <Text style={styles.primaryButtonText}>Next Level</Text>
+                <Text style={styles.secondaryButtonText}>
+                  {isLevelComplete ? "Restart Level" : "Try Again"}
+                </Text>
               </TouchableOpacity>
-            )}
 
-            <TouchableOpacity
-              style={[styles.button, styles.secondaryButton]}
-              onPress={onRestart}
-            >
-              <Text style={styles.secondaryButtonText}>
-                {isLevelComplete ? "Restart Level" : "Try Again"}
-              </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              style={[styles.button, styles.secondaryButton]}
-              onPress={() => onLevelSelect(1)}
-            >
-              <Text style={styles.secondaryButtonText}>Level Select</Text>
-            </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.button, styles.secondaryButton]}
+                onPress={() => setShowLevelSelect(true)}
+              >
+                <Text style={styles.secondaryButtonText}>Level Select</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
-      </View>
-    </Modal>
+      </Modal>
+
+      <LevelSelectModal
+        visible={showLevelSelect}
+        maxLevel={maxLevel}
+        currentLevel={level}
+        onSelectLevel={onLevelSelect}
+        onClose={() => setShowLevelSelect(false)}
+      />
+    </>
   );
 };
 
@@ -109,29 +133,36 @@ const styles = StyleSheet.create({
   },
   modal: {
     backgroundColor: "#FFFFFF",
-    borderRadius: 20,
+    borderRadius: 30,
     padding: 24,
     width: Dimensions.get("window").width - 60,
     maxWidth: 400,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
-    shadowRadius: 8,
+    shadowRadius: 12,
     elevation: 8,
+    borderWidth: 4,
+    borderColor: "#FFD54F",
   },
   title: {
-    fontSize: 28,
-    fontWeight: "bold",
+    fontSize: 32,
+    fontWeight: "900",
     textAlign: "center",
     marginBottom: 24,
-    color: "#212121",
+    color: "#FF6B9D",
+    textShadowColor: "rgba(0, 0, 0, 0.1)",
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 4,
   },
   statsContainer: {
     marginBottom: 24,
     paddingVertical: 16,
     paddingHorizontal: 20,
-    backgroundColor: "#F5F5F5",
-    borderRadius: 12,
+    backgroundColor: "#FFF9C4",
+    borderRadius: 20,
+    borderWidth: 3,
+    borderColor: "#FFD54F",
   },
   statRow: {
     flexDirection: "row",
@@ -140,18 +171,18 @@ const styles = StyleSheet.create({
   },
   statLabel: {
     fontSize: 16,
-    color: "#757575",
-    fontWeight: "600",
+    color: "#7C4DFF",
+    fontWeight: "800",
   },
   statValue: {
     fontSize: 16,
-    fontWeight: "bold",
-    color: "#212121",
+    fontWeight: "900",
+    color: "#FF6B9D",
   },
   newHighScore: {
-    fontSize: 16,
-    fontWeight: "bold",
-    color: "#FF9800",
+    fontSize: 18,
+    fontWeight: "900",
+    color: "#FF6B9D",
     textAlign: "center",
     marginTop: 8,
   },
@@ -159,25 +190,33 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   button: {
-    paddingVertical: 14,
+    paddingVertical: 16,
     paddingHorizontal: 24,
-    borderRadius: 12,
+    borderRadius: 25,
     alignItems: "center",
+    borderWidth: 3,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    elevation: 5,
   },
   primaryButton: {
     backgroundColor: "#4CAF50",
+    borderColor: "#388E3C",
   },
   secondaryButton: {
-    backgroundColor: "#2196F3",
+    backgroundColor: "#7C4DFF",
+    borderColor: "#5E35B1",
   },
   primaryButtonText: {
     color: "#FFFFFF",
-    fontSize: 16,
-    fontWeight: "bold",
+    fontSize: 18,
+    fontWeight: "900",
   },
   secondaryButtonText: {
     color: "#FFFFFF",
-    fontSize: 16,
-    fontWeight: "600",
+    fontSize: 18,
+    fontWeight: "900",
   },
 });

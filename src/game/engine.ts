@@ -6,8 +6,11 @@ import { shuffle } from "../utils/shuffle";
 /**
  * Initialize a new game at level 1
  */
-export function initializeGame(highScore: number = 0): GameState {
-  return createLevelState(1, 0, highScore);
+export function initializeGame(
+  highScore: number = 0,
+  maxLevel: number = 1,
+): GameState {
+  return createLevelState(1, 0, highScore, maxLevel);
 }
 
 /**
@@ -17,6 +20,7 @@ export function createLevelState(
   level: number,
   currentScore: number,
   highScore: number,
+  maxLevel: number = 1,
 ): GameState {
   const config = getLevelConfig(level);
   const selectedPairs = selectRandomPairs(config.pairCount);
@@ -55,6 +59,7 @@ export function createLevelState(
     status: GameStatus.Playing,
     timeRemaining: config.timeLimit,
     highScore,
+    maxLevel: Math.max(level, maxLevel),
   };
 }
 
@@ -197,21 +202,32 @@ export function advanceToNextLevel(state: GameState): GameState {
     return state;
   }
 
-  return createLevelState(state.level + 1, state.score, state.highScore);
+  const newLevel = state.level + 1;
+  const newMaxLevel = Math.max(newLevel, state.maxLevel);
+  return createLevelState(newLevel, state.score, state.highScore, newMaxLevel);
 }
 
 /**
  * Restart current level
  */
 export function restartLevel(state: GameState): GameState {
-  return createLevelState(state.level, state.score, state.highScore);
+  return createLevelState(
+    state.level,
+    state.score,
+    state.highScore,
+    state.maxLevel,
+  );
 }
 
 /**
  * Start a specific level (level select)
  */
-export function startLevel(level: number, highScore: number): GameState {
-  return createLevelState(level, 0, highScore);
+export function startLevel(
+  level: number,
+  highScore: number,
+  maxLevel: number,
+): GameState {
+  return createLevelState(level, 0, highScore, maxLevel);
 }
 
 /**
@@ -241,6 +257,6 @@ export function updateTimer(state: GameState): GameState {
 /**
  * Restart game from level 1
  */
-export function restartGame(highScore: number): GameState {
-  return initializeGame(highScore);
+export function restartGame(highScore: number, maxLevel: number): GameState {
+  return initializeGame(highScore, maxLevel);
 }

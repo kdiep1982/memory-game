@@ -30,6 +30,7 @@ export interface GameState {
   status: GameStatus;
   timeRemaining: number; // seconds
   highScore: number;
+  maxLevel: number; // Highest level reached
 }
 
 export enum GameStatus {
